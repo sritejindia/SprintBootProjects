@@ -15,4 +15,9 @@ public class WebPageController {
     public String nextPage() {
         return "nextpage";
     }
+
+    @GetMapping("/properties")
+    public String properties() {
+        return "properties";
+    }
 }
