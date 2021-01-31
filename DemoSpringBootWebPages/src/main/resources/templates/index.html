@@ -5,9 +5,19 @@
     <title>Home Page</title>
 </head>
 <body>
-    <h1>This is Home page.</h1>
-    <a href="nextpage">Click here.</a>
+    <h1 class="display-1">This is Home page.</h1>
+    <a class="btn btn-link" href="nextpage">Click here.</a>
     <p />
-    <a href="properties">Click here for properties page</a>
+    <a class="btn btn-info" href="properties">Click here for properties page</a>
+
+    <form action="/greeting" method="GET">
+        <div class="form-group">
+            <label for="name">What is your name?</label>
+            <input name="name" id="name" class="form-control"  aria-describedby="nameHelp" placeholder="Enter Name" />
+        </div>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </body>
 </html>
