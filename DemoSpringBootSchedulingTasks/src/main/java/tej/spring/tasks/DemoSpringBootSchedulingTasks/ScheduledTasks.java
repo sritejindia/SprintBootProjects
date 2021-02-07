@@ -16,14 +16,16 @@ public class ScheduledTasks {
     @Scheduled(fixedRate = 5000)
     public void reportCurrentTime() throws InterruptedException {
         logger.info("The time is now {}",dateFormat.format(new Date()));
-
-        Thread.sleep(10000);
     }
 
     @Scheduled(fixedRate = 2000, initialDelay = 1000)
-    public void reportCurrentYear() {
+    public void reportWorking() {
         logger.info("This is working {}",dateFormat.format(new Date()));
     }
 
+    @Scheduled(fixedRateString = "${scheduler.rate}")
+    public void background() {
+        logger.info("This is background task for fixed rate string {}", dateFormat.format(new Date()));
+    }
 
 }
