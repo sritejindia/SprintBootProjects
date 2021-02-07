@@ -14,7 +14,16 @@ public class ScheduledTasks {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
     @Scheduled(fixedRate = 5000)
-    public void reportCurrentTime() {
+    public void reportCurrentTime() throws InterruptedException {
         logger.info("The time is now {}",dateFormat.format(new Date()));
+
+        Thread.sleep(10000);
     }
+
+    @Scheduled(fixedRate = 2000, initialDelay = 1000)
+    public void reportCurrentYear() {
+        logger.info("This is working {}",dateFormat.format(new Date()));
+    }
+
+
 }
