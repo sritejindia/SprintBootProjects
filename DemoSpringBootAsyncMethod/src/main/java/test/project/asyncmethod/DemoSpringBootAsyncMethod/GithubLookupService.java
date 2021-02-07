@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 class GitHubLookupService {
 
     private static final Logger logger = LoggerFactory.getLogger(GitHubLookupService.class);
+    public static final String HTTPS_API_GITHUB_COM_USERS_S = "https://api.github.com/users/%s";
 
     private final RestTemplate restTemplate;
 
@@ -23,7 +24,7 @@ class GitHubLookupService {
     @Async
     public CompletableFuture<User> findUser(String user) throws InterruptedException {
         logger.info("Looking up " + user);
-        String url = String.format("https://api.github.com/users/%s", user);
+        String url = String.format(HTTPS_API_GITHUB_COM_USERS_S, user);
         User results = restTemplate.getForObject(url, User.class);
         // Artificial delay of 1s for demonstration purposes
         Thread.sleep(1000L);
