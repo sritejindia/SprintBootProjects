@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import tej.spring.restcrud.DemoSpringBootRestOperations.model.Product;
 import tej.spring.restcrud.DemoSpringBootRestOperations.service.ProductService;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -32,5 +31,10 @@ public class ProductController {
     @PutMapping("/products/{pId}")
     public void updateProduct(@RequestBody Product product, @PathVariable("pId") String id) {
         productService.updateProduct(id, product);
+    }
+
+    @DeleteMapping("/products/{pId}")
+    public void deleteProduct(@PathVariable("pId") String id) {
+        productService.deleteProduct(id);
     }
 }
