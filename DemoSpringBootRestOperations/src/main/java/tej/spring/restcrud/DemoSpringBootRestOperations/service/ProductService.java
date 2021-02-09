@@ -30,4 +30,15 @@ public class ProductService {
         products.add(product);
     }
 
+    public void updateProduct(String id, Product product) {
+       for(int i=0; i< products.size(); i++) {
+           Product p = products.get(i);
+
+           if(p.getId().equals(id)) {
+               products.set(i, product);
+               return;
+           }
+       }
+    }
+
 }

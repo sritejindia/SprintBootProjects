@@ -28,4 +28,9 @@ public class ProductController {
     public void addProduct(@RequestBody Product product) {
         productService.addProduct(product);
     }
+
+    @PutMapping("/products/{pId}")
+    public void updateProduct(@RequestBody Product product, @PathVariable("pId") String id) {
+        productService.updateProduct(id, product);
+    }
 }
