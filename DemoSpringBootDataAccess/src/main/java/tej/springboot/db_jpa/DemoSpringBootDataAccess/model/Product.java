@@ -1,9 +1,10 @@
 package tej.springboot.db_jpa.DemoSpringBootDataAccess.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity(name = "products")
 public class Product {
@@ -14,6 +15,14 @@ public class Product {
 
     private String name;
     private String category;
+
+    @Column(name = "ROW_CREAT_TS", insertable = true, updatable = false)
+    @CreationTimestamp
+    private Date rowCreatTs;
+
+    @Column(name = "ROW_UPDATE_TS", insertable = false, updatable = true)
+    @UpdateTimestamp
+    private Date rowUpdateTs;
 
     public Product() {
     }
@@ -45,6 +54,22 @@ public class Product {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public Date getRowCreatTs() {
+        return rowCreatTs;
+    }
+
+    public void setRowCreatTs(Date rowCreatTs) {
+        this.rowCreatTs = rowCreatTs;
+    }
+
+    public Date getRowUpdateTs() {
+        return rowUpdateTs;
+    }
+
+    public void setRowUpdateTs(Date rowUpdateTs) {
+        this.rowUpdateTs = rowUpdateTs;
     }
 
     @Override
