@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import tej.springboot.db_jpa.DemoSpringBootDataAccess.model.Product;
 import tej.springboot.db_jpa.DemoSpringBootDataAccess.repository.ProductRepository;
 
 @SpringBootApplication
+@EnableCaching
 public class DemoSpringBootDataAccessApplication implements CommandLineRunner {
 
 	@Autowired
