@@ -1,0 +1,8 @@
+docker network create db_network
+
+docker container run -p 3306:3306 -d --name app-database --network db_network --mount type=volume,source=mysql_data,target=/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password mysql;
+
+
+docker port app-database
+
+--- use above port to connect to mysql workbench using ip:port
