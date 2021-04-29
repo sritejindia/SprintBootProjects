@@ -1,0 +1,11 @@
+Step 1: Check the npm package is really installed globally.
+
+npm list -g --depth=0
+
+
+Step 2: Next check the npm globally save path.
+
+npm bin -g
+
+Step 3: Set path
+export PATH="$PATH:/Users/sritejkurapati/.npm-packages/bin/"
